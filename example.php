@@ -1,4 +1,5 @@
 <?php
+	require('noPhpredis.php');
 /*
 
 	Basic 'static' usage. Stores all three supported types, retrieves them.
@@ -12,7 +13,7 @@
 
 */
 
-	print_r(noRedis::put('test_string','test'));
+	print_r(noPhpredis::put('test_string','test'));
 
 /* 
 
@@ -23,7 +24,7 @@
 
 	$example_assoc_array = array('item1'=>'here is my data','item2'=>'here is items 2 data');
 
-	print_r(noRedis::put($example_assoc_array,'test'));
+	print_r(noPhpredis::put($example_assoc_array,'test'));
 
 
 /* 
@@ -35,7 +36,7 @@
 
 	$example_list_data = array(0=>'item 0',1=>'item 1',2=>'item 2');
 
-	print_r(noRedis::put($example_list_data,'test3'));
+	print_r(noPhpredis::put($example_list_data,'test3'));
 
 /*
 
@@ -45,10 +46,10 @@
 
 
 	echo "\n A redis string \n";
-	print_r(noRedis::get('test'));
+	print_r(noPhpredis::get('test'));
 	
 	echo "\n A redis hash \n";
-	print_r(noRedis::get('test2'));
+	print_r(noPhpredis::get('test2'));
 	
 	echo "\n A redis list \n";
-	print_r(noRedis::get('test3'));
+	print_r(noPhpredis::get('test3'));
